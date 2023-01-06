@@ -3,6 +3,7 @@ package com.microservies.Entities;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +13,15 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
+@Entity
 public class Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String name;
     private String phoneno;
 
+    @OneToMany(targetEntity = Contact.class, cascade = CascadeType.ALL)
+    @JoinColumn(name="contact_id", referencedColumnName = "cid")
     private List<Contact> contactList = new ArrayList<>();
 }
