@@ -10,10 +10,5 @@ import java.util.List;
 @Repository
 public interface UserRepo extends JpaRepository<Users, Integer> {
 
-    public Users findUserbyId(int id);
-
-    public Users saveuser(User user);
-
-    public List<Users> findallusers();
 
 }
