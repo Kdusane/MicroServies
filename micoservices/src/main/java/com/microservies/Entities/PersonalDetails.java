@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Contact {
+public class PersonalDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cid;

@@ -1,7 +1,7 @@
 package com.microservies.Controller;
 
 
-import com.microservies.Entities.Contact;
+
 import com.microservies.Entities.Users;
 import com.microservies.Repository.UserRepo;
 import com.microservies.Services.MainServices;
@@ -26,8 +26,8 @@ public class MainController {
     }
 
     @GetMapping("/getUserById/{id}")
-    public List<Contact> findUsersById(@PathVariable int id){
-       return mainServices.findUserbyId(id).get().getContactList();
+    public Optional<Users> findUsersById(@PathVariable int id){
+       return mainServices.findUserbyId(id);
     }
 
     @GetMapping("/getAllUsers")
