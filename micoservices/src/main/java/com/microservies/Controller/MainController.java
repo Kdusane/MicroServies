@@ -1,11 +1,15 @@
 package com.microservies.Controller;
 
 
+import com.microservies.Entities.Contact;
 import com.microservies.Entities.Users;
 import com.microservies.Repository.UserRepo;
 import com.microservies.Services.MainServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class MainController {
@@ -22,12 +26,12 @@ public class MainController {
     }
 
     @GetMapping("/getUserById/{id}")
-    public void findUsersById(@PathVariable int id){
-        mainServices.findUserbyId(id);
+    public List<Contact> findUsersById(@PathVariable int id){
+       return mainServices.findUserbyId(id).get().getContactList();
     }
 
     @GetMapping("/getAllUsers")
-    public void findAllUsers(){
-        mainServices.findallusers();
+    public List<Users> findAllUsers(){
+       return  mainServices.findallusers();
     }
 }

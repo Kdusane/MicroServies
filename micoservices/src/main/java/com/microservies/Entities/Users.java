@@ -22,6 +22,6 @@ public class Users {
     private String phoneno;
 
     @OneToMany(targetEntity = Contact.class, cascade = CascadeType.ALL)
-    @JoinColumn(name="contact_id", referencedColumnName = "cid")
+    @JoinColumn(name="contact_id", referencedColumnName = "userId")
     private List<Contact> contactList = new ArrayList<>();
 }
