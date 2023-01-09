@@ -21,7 +21,7 @@ public class Users {
     private String name;
     private String phoneno;
 
-//    @OneToMany(targetEntity = Contact.class, cascade = CascadeType.ALL)
-//    @JoinColumn(name="contact_id", referencedColumnName = "userId")
-   private List<PersonalDetails> contactList = new ArrayList<>();
+    @OneToMany(targetEntity = PersonalDetails.class, cascade = CascadeType.ALL)
+    @JoinColumn(name="contact_id", referencedColumnName = "userId")
+    private List<PersonalDetails> contactList = new ArrayList<>();
 }
