@@ -2,7 +2,6 @@ package com.microservies.Services;
 
 import com.microservies.Entities.Users;
 import com.microservies.Repository.UserRepo;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
