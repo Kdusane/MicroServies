@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/microservices")
 public class MainController {
     @Autowired
     private MainServices mainServices;
