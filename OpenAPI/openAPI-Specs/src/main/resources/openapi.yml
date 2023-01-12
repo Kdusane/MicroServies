@@ -41,9 +41,6 @@ paths:
           description: upload sucessfull
 
 
-
-
-
 components:
   schemas:
     course:
